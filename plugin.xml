@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!--添加菜单-->
+   <!--启动登录-->
+   <extension
+         point="org.eclipse.ui.startup">
+         <startup
+         	  class="com.badou.start.Login">
+  		 </startup>
+   </extension>
+	 <!--新建新的透视图-->
+	<extension
+	       point="org.eclipse.ui.perspectives">
+     	<perspective
+     		class="com.badou.perspective.ui.Perspective"
+     		icon="icons/sample.png"
+     		id="com.badou.perspective.ui.Perspective"
+     		name="个人中心"/>
+	 </extension> 
+	
+    <!--新建向导-->
+	<extension
+	   point="org.eclipse.ui.newWizards">
+	    <category
+            id="badou.wizards"
+            name="badou项目">
+            <!--文件夹名称-->
+      </category>
+	   <wizard
+	   		category="badou.wizards"
+	   		class="com.badou.newbadouwizard.NewBadouWizard"
+	   		icon="icons/UserAccount.png"
+	   		id="com.badou.newbadouwizard.NewBadouWizard"
+	   		name="badou Project"/>
+	</extension>
+</plugin>
